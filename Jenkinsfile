@@ -43,13 +43,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                docker stop react-container || true
-                docker rm react-container || true
+                docker rm -f react-container || true
 
                 docker run -d \
                 --name react-container \
                 -p 80:80 \
-                $IMAGE_NAME:$TAG
+                madhan723/dev:${BUILD_NUMBER}
                 '''
             }
         }
