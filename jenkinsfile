@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "dockerhubusername/dev"
+        IMAGE_NAME = "madhan723/dev"
         TAG = "${BUILD_NUMBER}"
     }
 
@@ -11,7 +11,7 @@ pipeline {
         stage('Clone') {
             steps {
                 git branch: 'dev',
-                url: 'https://github.com/<USERNAME>/devops-build-project.git'
+                url: 'https://github.com/Madhan723/devops-build-project.git'
             }
         }
 
