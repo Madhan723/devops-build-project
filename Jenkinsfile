@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "madhan723/dev"
+        IMAGE_NAME = "madhan723/prod"
         TAG = "${BUILD_NUMBER}"
     }
 
@@ -10,7 +10,7 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git branch: 'dev',
+                git branch: 'main',
                 url: 'https://github.com/Madhan723/devops-build-project.git'
             }
         }
